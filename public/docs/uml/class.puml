@@ -1,0 +1,17 @@
+@startuml
+
+class Users{
+    String FirstName
+    String LastName
+    String Login
+    String Password
+}
+
+class Colors{
+    String Name
+    String UserID
+}
+
+Users "1" --> "*" Colors
+
+@enduml
