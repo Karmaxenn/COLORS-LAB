@@ -1,0 +1,20 @@
+@startuml
+
+start
+
+repeat
+    while (Login) is (fail)
+        :User/Password combination incorrect;
+    endwhile(success)
+
+    repeat
+        switch(Features)
+        case(Add Color)
+            :Color added;
+        case(Search Color)
+            :Color name;
+            :Display colors found;
+        endswitch
+    repeat while (Logout) is (no) not (yes)
+    
+@enduml
