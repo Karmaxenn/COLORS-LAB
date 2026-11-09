@@ -6,13 +6,13 @@ on:
 
 jobs:
   lint:
-    run_ons: ubuntu-latest
+    run-ons: ubuntu-latest
     steps:
       - name: Check code
         uses: actions/checkout@v4
       
       - name: set up node
-        uses: actions/checkout@v4
+        uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
@@ -32,7 +32,7 @@ jobs:
       - name: set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version:"8.2"
+          php-version: "8.2"
         
       - name: Lint PHP
         run: find LAMPAPI -name "*.php" -print0 | xargs -0 -n1 php -l
