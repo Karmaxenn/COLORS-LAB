@@ -1,0 +1,38 @@
+name: Lint
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    run_ons: ubuntu-latest
+    steps:
+      - name: Check code
+        uses: actions/checkout@v4
+      
+      - name: set up node
+        uses: actions/checkout@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: install dependencies
+        run: npm ci
+
+      - name: Lint JavaScript
+        run: npm run lint:js
+      
+      - name: Lint CSS
+        run: npm run lint:css
+      
+      - name: Lint HTML
+        run: npm run lint:html
+
+      - name: set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version:"8.2"
+        
+      - name: Lint PHP
+        run: find LAMPAPI -name "*.php" -print0 | xargs -0 -n1 php -l

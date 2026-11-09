@@ -1,0 +1,34 @@
+{
+  "name": "colors-lab",
+  "version": "1.0.0",
+  "description": "The COLORS application is a web browser that allows its users to add colors to a database and search for the colors within the database.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:js": "eslint public/js",
+    "lint:css": "stylelint \"**/*.css\" --ignore-path .gitignore",
+    "lint:html": "htmlhint \"**/*.html\" --ignore \"**/node_modules/**\"",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karmaxenn/COLORS-LAB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Karmaxenn/COLORS-LAB/issues"
+  },
+  "homepage": "https://github.com/Karmaxenn/COLORS-LAB#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
+    "htmlhint": "^1.9.2",
+    "stylelint": "^18.0.0",
+    "stylelint-config-standard": "^41.0.0"
+  }
+}
