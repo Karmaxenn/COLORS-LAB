@@ -16,4 +16,20 @@ module.exports =
             "no-unused-vars": ["error", {vars: "local"}],
         },
     },
+
+    {
+        files: ["public/js/code.js"],
+        languageOptions:
+        {
+            globals: {...globals.browser, md5: "readonly", module: "writeable"}
+        },
+    },
+
+    {
+        files: ["public/js/**/*.test.js"],
+        languageOptions:
+        {
+            globals: {...globals.node, ...globals.jest}
+        },
+    },
 ];

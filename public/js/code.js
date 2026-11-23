@@ -113,6 +113,12 @@ function addColor()
 	let newColor = document.getElementById("colorText").value;
 	document.getElementById("colorAddResult").innerHTML = "";
 
+	if(!validateColor(newColor))
+		{
+			document.getElementById("colorAddResult").innerHTML = "Please enter valid color";
+			return;
+		}
+
 	let tmp = {color:newColor,userId};
 	let jsonPayload = JSON.stringify( tmp );
 
@@ -130,6 +136,7 @@ function addColor()
 				document.getElementById("colorAddResult").innerHTML = "Color has been added";
 			}
 		};
+		
 		xhr.send(jsonPayload);
 	}
 	catch(err)
@@ -183,3 +190,10 @@ function searchColor()
 	}
 	
 }
+
+function validateColor(color)
+{
+	return typeof color == 'string' && color.trim().length > 0 && color.length <= 50;
+}
+
+module.exports = {doLogin, saveCookie, readCookie, doLogout, addColor, searchColor, validateColor};
